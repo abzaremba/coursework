@@ -24,7 +24,7 @@ int main()
 	example_date.normalize();
 	cout << example_date.getMonth();
 	
-	//cout << endl << endl << monthToString(1);
+	cout << endl << endl << DateC::monthToString(1);
 	
     return 0;
 }

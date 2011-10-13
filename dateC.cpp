@@ -56,9 +56,3 @@ void DateC::normalize()
 }
 
 
-/*
-void prettyPrint(DateC& d)
-{
-	
-}
-*/

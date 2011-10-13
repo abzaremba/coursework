@@ -7,6 +7,11 @@
 */
 
 #include "dateC.h"
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl
 
 int main(unsigned int argc, char* argv[])
 {

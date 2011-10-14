@@ -11,7 +11,7 @@
 
 using std::cout;
 using std::cin;
-using std::endl
+using std::endl;
 
 int main(unsigned int argc, char* argv[])
 {
@@ -127,7 +127,7 @@ void DateC::testMonthWrap(void)
     cout << "\t--------------------" << endl;
     cout << "ACTION: Print days in month ->" ;
     cout << DateC::monthToString( d.getMonth()) ;
-    cout << " are : " << d.daysIn( d.getMonth() ) ;
+    cout << " are : " << d.daysInMonth( d.getMonth() ) ;
     cout << endl << endl ;
 
     cout << "\tCHECK MONTH WRAP, (BY MONTH)" << endl;

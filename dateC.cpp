@@ -7,21 +7,45 @@ using std::endl;
 using std::string;
 
 
+
+void DateC::advance(int y, int m, int d) 
+{ 
+	
+	day += d;
+	int temp_month = month;
+	while ( day > daysInMonth(temp_month) ) {
+		cout << "day: " << day << " month: " << month << endl;
+		cout << "daysInMonth(temp_month) " << daysInMonth(temp_month) << endl;
+		day -= daysInMonth(temp_month);
+		temp_month = (++temp_month> 12) ? 1 : temp_month;
+		m += 1;
+		cout << "day: " << day << " month: " << month << endl;
+		cout << "d: " << d << " m: " << m << endl;
+	}
+	
+	
+	if (month+m>12) {
+		cout << "m: " << m << " y: " << y << endl;
+		cout << "month: " << month << " year: " << year << endl;
+		y+=(month+m)/12;
+		month=(month+m)%12;
+		cout << "m: " << m << "y: " << y << endl;
+		cout << "month: " << month << " year: " << year << endl;
+	}
+	
+	year+=y;
+}
+
+
 int DateC::daysInMonth(int m) const
 {
 	switch (m) {
-		case 1: return 31;
-		case 2: return 28;
-		case 3: return 31;
-		case 4:	return 30;
-		case 5:	return 31;
-		case 6:	return 30;	
-		case 7:	return 31;
-		case 8:	return 31;
-		case 9:	return 30;
-		case 10:return 31;
-		case 11:return 30;
-		case 12:return 31;		
+		case 2: return 28; break;
+		case 4:	return 30; break;
+		case 6:	return 30; break;
+		case 9:	return 30; break;
+		case 11:return 30; break;
+		default : return 31; break;
 	}
 }
 

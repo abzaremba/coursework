@@ -20,25 +20,25 @@ public:
 	void setDay(int d) { day=d; }
 	
 	void reset(int y, int m, int d) { year=y; month=m; day=d; }
-	void advance(int y, int m, int d) { year+=y; month+=m; day+=d; }
+	void advance(int y=0, int m=0, int d=1);
 	void normalize();
 	
 	int daysInMonth(int m) const;
 	static std::string monthToString(int m)
 	{
 	switch (m) {
-		case 1: return "January";
-		case 2: return "February";
-		case 3: return "March";
-		case 4:	return "April";
-		case 5:	return "May";
-		case 6:	return "June";	
-		case 7:	return "July";
-		case 8:	return "August";
-		case 9:	return "September";
-		case 10:return "October";
-		case 11:return "November";
-		case 12:return "December";		
+		case 1: return "January"; break;
+		case 2: return "February"; break;
+		case 3: return "March"; break;
+		case 4:	return "April"; break;
+		case 5:	return "May"; break;
+		case 6:	return "June"; break;
+		case 7:	return "July"; break;
+		case 8:	return "August"; break;
+		case 9:	return "September"; break;
+		case 10:return "October"; break;
+		case 11:return "November"; break;
+		default:return "December"; break;
 	}
 	}
 	
@@ -51,30 +51,13 @@ public:
 private:
 	int year, month, day;
 };
+
+
 /*
-static std::string DateC::monthToString(int m)
-{
-	switch (m) {
-		case 1: return "January";
-		case 2: return "February";
-		case 3: return "March";
-		case 4:	return "April";
-		case 5:	return "May";
-		case 6:	return "June";	
-		case 7:	return "July";
-		case 8:	return "August";
-		case 9:	return "September";
-		case 10:return "October";
-		case 11:return "November";
-		case 12:return "December";		
-	}
-}
-*/
-
-
 void prettyPrint(DateC& d)
 {
-	std::cout << d.getDay() << " " << DateC::monthToString(d.getMonth()) << d.getYear();
+	std::cout << d.getDay() << " " << DateC::monthToString(d.getMonth()) << " " << d.getYear();
 }
+*/
 
 #endif

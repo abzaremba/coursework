@@ -8,7 +8,7 @@ int main()
 {
 	DateC example_date(1,10,10);
 	cout << example_date.getDay() << endl;
-	example_date.reset(2010,11,11);
+	example_date.reset(2010,5,11);
 	cout << example_date.getYear() << " " << example_date.getMonth() << " " << example_date.getDay();
 	example_date.advance(1,1,1);
 	cout << endl;
@@ -25,6 +25,16 @@ int main()
 	cout << example_date.getMonth();
 	
 	cout << endl << endl << DateC::monthToString(1);
+	
+	cout << endl << endl << endl;
+	cout << example_date.getDay() << " " << DateC::monthToString(example_date.getMonth()) 
+		 << " " << example_date.getYear() << endl;
+	example_date.advance(0,0,444);
+	cout << example_date.getDay() << " " << DateC::monthToString(example_date.getMonth()) 
+		 << " " << example_date.getYear() << endl << endl << endl << endl;
+	example_date.advance(0,13,0);
+	cout << example_date.getDay() << " " << DateC::monthToString(example_date.getMonth()) 
+		 << " " << example_date.getYear() << endl;
 	
     return 0;
 }

@@ -4,11 +4,30 @@
 using std::cout;
 using std::endl;
 
+
+
+void prettyPrint(DateC& d)
+{
+	std::cout << d.getDay() << " " << DateC::monthToString(d.getMonth()) << " " << d.getYear();
+}
+
+
+
 int main()
 {
-	DateC example_date(1,10,10);
+	DateC date_d(28,9,1964);
+	for( int i = 0; i < 3 ; i++ ) {
+        date_d.advance(); 
+        cout << endl;
+		prettyPrint(date_d);
+		cout << endl;
+    }
+    
+
+	/*
+	DateC example_date(10,10,10);
 	cout << example_date.getDay() << endl;
-	example_date.reset(2010,5,11);
+	example_date.reset(11,5,2011);
 	cout << example_date.getYear() << " " << example_date.getMonth() << " " << example_date.getDay();
 	example_date.advance(1,1,1);
 	cout << endl;
@@ -29,12 +48,16 @@ int main()
 	cout << endl << endl << endl;
 	cout << example_date.getDay() << " " << DateC::monthToString(example_date.getMonth()) 
 		 << " " << example_date.getYear() << endl;
-	example_date.advance(0,0,444);
+	example_date.advance(444,0,0);
 	cout << example_date.getDay() << " " << DateC::monthToString(example_date.getMonth()) 
 		 << " " << example_date.getYear() << endl << endl << endl << endl;
 	example_date.advance(0,13,0);
 	cout << example_date.getDay() << " " << DateC::monthToString(example_date.getMonth()) 
 		 << " " << example_date.getYear() << endl;
+		 
+	*/
 	
     return 0;
 }
+
+

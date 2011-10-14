@@ -21,6 +21,11 @@ int main(unsigned int argc, char* argv[])
     DateC::testOperators();
 }
 
+void prettyPrint(DateC& d)
+{
+	std::cout << d.getDay() << " " << DateC::monthToString(d.getMonth()) << " " << d.getYear();
+}
+
 void DateC::testOperators(void)
 {
     cout << "DateC::testOperators()" << endl ;

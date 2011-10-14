@@ -8,19 +8,19 @@
 class DateC
 {
 public:
-	DateC(): year(1), month(1), day(1) {}
-	DateC(int y, int m, int d): year(y), month(m), day(d) {}
+	DateC(): day(1), month(1), year(1) {}
+	DateC(int d, int m, int y): day(d), month(m), year(y) {}
 	
-	int getYear() const { return year; }
-	int getMonth() const { return month; }
 	int getDay() const { return day; }
+	int getMonth() const { return month; }
+	int getYear() const { return year; }
 	
-	void setYear(int y) { year=y; }
-	void setMonth(int m) { month=m; }
 	void setDay(int d) { day=d; }
+	void setMonth(int m) { month=m; }
+	void setYear(int y) { year=y; }
 	
-	void reset(int y, int m, int d) { year=y; month=m; day=d; }
-	void advance(int y=0, int m=0, int d=1);
+	void reset(int d, int m, int y) { day=d; month=m; year=y; }
+	void advance(int d=1, int m=0, int y=0);
 	void normalize();
 	
 	int daysInMonth(int m) const;
@@ -49,7 +49,7 @@ public:
 	static void testMonthWrap(void);
 	
 private:
-	int year, month, day;
+	int day, month, year;
 };
 
 
